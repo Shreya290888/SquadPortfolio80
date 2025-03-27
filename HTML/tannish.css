@@ -1,0 +1,232 @@
+/* CSS for Student Portfolio Website */
+
+body {
+    font-family: 'Inria Serif', serif;
+    /* background-color: #000; */
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  .uni-typewritter {
+    display: inline-block;
+    font-size: 10rem;
+    height: 9vh;
+    overflow: hidden;
+    border-right: 4px solid white;
+    white-space: nowrap;
+    animation: typing 3s infinite alternate, blink 0.7s infinite ;
+    /* animation: typing 2.5s steps(20, end) infinite, blink 0.7s infinite; */
+    font-size: 3rem;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+   
+
+  .logo img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .image-box img {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Bright white shadow */
+  }
+
+  #background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: flex-start; Keep elements aligned closely */
+    gap: 30px;
+    align-items: center;
+    padding: 15px 20px;
+    /* background-color: #000; */
+  }
+  .navlinks{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    margin-top: 3px;
+    margin-left: 10px;
+    gap: 25px;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    color: #ff0000;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh; /* Adjust the height if needed */
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 100px;
+    margin: 0;
+  }
+  
+  p.welcome {
+    font-size: 30px;
+    margin-top: -10px;
+  }
+  
+  .title {
+    font-size: 64px;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 24px;
+    color: #ccc;
+  }
+   
+  .image-box img {
+    width: 700px;
+    height: 500px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-box img:hover {
+    transform: scale(1.05);
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Required for absolute positioning of the text */
+    margin-top: 20px;
+  }
+  
+  .image-box {
+    position: relative;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .squad-title {
+    font-size: 35px; /* Increase font size */
+    font-weight: bold;
+    position: static;
+    bottom: -40px; /* Move text below images */
+    left: 50%;
+    /* transform: translateX(-50%);
+    white-space: nowrap;
+    border-right: 4px solid white;
+    overflow: hidden; */
+  }
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+  
+  .footer {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000;
+    color: #fff;
+    justify-content: bottom;
+  }
+  
+  .footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #ff0000;
+  }
+  
+  /* Animation */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  footer p {
+    text-align: center;
+    justify-content: flex-end;
+  }
+
+  footer {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 20vh;
+    margin-top: 80px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    color: red;
+  }
+  
+  

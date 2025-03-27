@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Students - Spotlight Gallery</title>
+    <video autoplay muted loop id="background-video">
+      <source src="" type="video/mp4" />
+    </video>
+    <!-- <nav class="navbar">
+      <div class="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./project.html">Students</a>
+        <a href="./new.html">Mentors</a>
+        <a href="#memories">Memories</a>
+        <a href="#events">Events</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="logo"><img src="Kalvium.svg" alt="Kalvium Logo" /></div>
+    </nav> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #7a7a7a;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .student-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            height: 380px;
+            cursor: pointer;
+        }
+        
+        .student-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+        
+        .student-card:hover .student-image {
+          filter: grayscale(0%);
+          transform: scale(1.03);
+      }
+      .spotlight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at var(--x) var(--y),
+            rgba(82, 74, 74, 0) 40px,
+            rgba(83, 71, 71, 0.8) 200px
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+    
+    .student-card:hover .spotlight {
+        opacity: 1;
+    }
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    
+      
+        
+        
+        
+        
+        
+        
+        .student-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        
+        .student-card:hover .student-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .student-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .student-branch {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .university-logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Students</h1>
+        
+        <div class="gallery" id="studentsGallery">
+            <!-- Students will be added by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Student data
+        const students = [
+            {
+                id: 1,
+                name: "XIENA VIJ",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/xiena.jpeg"
+            },
+            {
+                id: 2,
+                name: "ANIKA KAUSHIK",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/anika.jpeg"
+            },
+            {
+                id: 3,
+                name: "YEN WADHWA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/yen.jpeg"
+            },
+            {
+                id: 4,
+                name: "UTKARSH PAL",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/utkarshPal.jpeg"
+            },
+            {
+                id: 5,
+                name: "MITALI GUPTA",
+                branch: "CSE AIFT,  1st Year",
+                image: "../IMAGES/mitali.jpeg"
+            },
+            {
+              id: 5,
+              name: "KAPISH GARG",
+              branch: "CSE AIFT,  1st Year",
+              image: "../IMAGES/kapish.jpeg"
+          },
+          
+            
+
+            {
+                id: 7,
+                name: "SHREYA GOYAL",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/shreya.jpeg"
+            },
+            {
+                id: 8,
+                name: "MOKSH KULSHRESHTHA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/moksh.jpeg"
+            },
+            {
+                id: 9,
+                name: "CHHAVI SINGLA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/chhavi.jpeg"
+            },
+            {
+                id: 10,
+                name: "TANMAY KHOSLA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/tanmay.jpeg"
+            },
+            {
+                id: 11,
+                name: "AKHIL KHATRI",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/akhil.jpeg"
+            },
+            {
+                id: 12,
+                name: "TANNISH GARG",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/tannishGarg.jpeg"
+            },
+            {
+                id: 13,
+                name: "NANDINI SANTOSHI",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/nandini.jpeg"
+            },
+            {
+                id: 14,
+                name: "KESHAV",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/keshav.jpeg"
+            },
+            {
+                id: 15,
+                name: "YUGVEER MEHNDIRATTA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/yugveer.jpeg"
+            },
+            {
+                id: 16,
+                name: "ARSH MITTAL",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/arsh.jpeg"
+            },
+            {
+                id: 17,
+                name: "SIMRAN ARORA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/simran.jpeg"
+            },
+            {
+                id: 18,
+                name: "VIKRAM REHNI",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/tannishGarg.jpeg"
+            },
+            {
+                id: 19,
+                name: "VIKRAM KOCHAR",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/vikramKochhar.jpeg"
+            },
+            {
+                id: 20,
+                name: "YASHASVI MAHESHWARI",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/yashasvii.jpeg"
+            },
+            {
+                id: 21,
+                name: "SANCHI AHUJA",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/sanchi.jpeg"
+            },
+            {
+                id: 22,
+                name: "TANVI AGGARWAL",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/tanvi.jpeg"
+            },
+            {
+                id: 23,
+                name: "SHUBHDEEP BHOLE",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/subhdeep.jpeg"
+            },
+            {
+                id: 24,
+                name: "MUKUND BANSAL",
+                branch: "CSE AIFT, 1st Year",
+                image: "../IMAGES/mukund.jpeg"
+            }
+        ];
+
+        // Function to generate student cards
+        function createStudentGallery() {
+            const gallery = document.getElementById('studentsGallery');
+            
+            students.forEach(student => {
+                const card = document.createElement('div');
+                card.className = 'student-card';
+                
+                card.innerHTML = `
+                    <img src="${student.image}" alt="${student.name}" class="student-image">
+                    <div class="spotlight"></div>
+                    <div class="student-info">
+                        <div class="student-name">${student.name}</div>
+                        <div class="student-branch">${student.branch}</div>
+                    </div>
+                    <div class="university-logo">
+                        <img src="../IMAGES/logo2.png" alt="University Logo" width="30" height="30">
+                    </div>
+                `;
+                
+                // Add spotlight effect
+                card.addEventListener('mousemove', function(e) {
+                    const spotlight = this.querySelector('.spotlight');
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    spotlight.style.setProperty('--x', `${x}px`);
+                    spotlight.style.setProperty('--y', `${y}px`);
+                });
+                
+                gallery.appendChild(card);
+            });
+        }
+
+        // Initialize gallery when page loads
+        document.addEventListener('DOMContentLoaded', createStudentGallery);
+    </script>
+</body>
+</html>
