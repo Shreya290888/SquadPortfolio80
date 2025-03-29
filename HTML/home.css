@@ -38,6 +38,7 @@ body {
   .logo img {
     width: 100px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
+    align-items: end;
   }
 
   .image-box img {
@@ -62,6 +63,7 @@ body {
     gap: 30px;
     align-items: center;
     padding: 15px 20px;
+    
     /* background-color: #000; */
   }
   .navlinks{
