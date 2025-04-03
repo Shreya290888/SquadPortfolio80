@@ -49,6 +49,26 @@
     align-items: end;
   }
   
+   /* Hero Section Styling (Text at the Top) */
+   .hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ff9966, #e74c3c);
+    color: white;
+    margin-bottom: 30px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
   .search {
     background: transparent;
     border: 1px solid white;
