@@ -94,6 +94,27 @@ nav a:hover {
 }
 
 /* Right Images Section */
+.right-images-search {
+    display: flex;
+    flex-direction:column;
+    align-items: center; /* This centers items horizontally */
+}
+
+.search-bar-container {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 60%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
 .right-images {
     width: 65%; /* Adjust width as needed */
     padding: 20px;
@@ -103,11 +124,12 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
+    
 }
 
 /* Student Card Styling */
 .student-card {
-    width: 200px; /* Adjusted for smaller size */
+    width: 200px;
     height: 250px;
     background-color: #ffffff;
     border-radius: 15px;
@@ -119,6 +141,7 @@ nav a:hover {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
 }
+
 
 .student-card:hover {
     transform: rotateX(10deg) rotateY(10deg) scale(1.05); /* 3D hover effect */
@@ -143,6 +166,7 @@ nav a:hover {
     height: auto; /* Adjust proportionally for smaller cards */
     object-fit: fill;
     transition: all 0.5s ease;
+    
 }
 
 .student-card:hover .student-image {
@@ -179,8 +203,8 @@ nav a:hover {
 
 .linkedin-icon {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
+    bottom: 5px;
+    left: 58%;
     transform: translateX(-50%);
     display: block; /* Change from display: none; */
     padding-top:100px;
@@ -191,8 +215,8 @@ nav a:hover {
 }
 
 .linkedin-icon img {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 20px;
     transition: transform 0.3s;
     
 }
@@ -200,3 +224,29 @@ nav a:hover {
 .linkedin-icon img:hover {
     transform: scale(1.2);
 }
+
+.github-icon {
+    position: absolute;
+    bottom: 5px;
+    left: 42%;
+    transform: translateX(-50%);
+    display: block; /* Change from display: none; */
+    padding-top:100px;
+}
+
+.student-card:hover .github-icon {
+    display: block; /* No change needed */
+}
+
+.github-icon img {
+    width: 25px;
+    height: 20px;
+    transition: transform 0.3s;
+    
+}
+
+.github-icon img:hover {
+    transform: scale(1.2);
+}
+
+
